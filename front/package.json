@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "move-files": "cp -r dist/* ../src/main/resources/static/"
+    "move-files": "cp -r dist/* ../src/main/resources/static/",
+    "build:move": "npm run build && npm run move-files"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^3.1.1",

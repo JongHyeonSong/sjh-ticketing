@@ -18,7 +18,7 @@ public class TicketingBootApplication {
 	}
 
 	// 라우팅에 . 이 포함되지않는 모든 라우팅은 index.html 리턴
-	@GetMapping("/{path:[^\\.]*}")
+	@GetMapping("/**/{path:[^\\.]*}")
 	public String spaRedirect() {
 		return "forward:/index.html";
 	}
