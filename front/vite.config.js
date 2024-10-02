@@ -11,4 +11,18 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+
+  server: {
+    host: "0.0.0.0",
+    port: parseInt(process.env.PORT || "3000", 10),
+    proxy: {
+      "/back": {
+        target: "http://localhost:8080",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/back/, ""),
+        secure: false,
+        ws: true,
+      },
+    },
+  },
 });
