@@ -22,4 +22,9 @@ public class TicketingBootApplication {
 	public String spaRedirect() {
 		return "forward:/index.html";
 	}
+
+	@GetMapping("/api")
+	public String redirectAdmin() {
+		return "redirect:/swagger-ui/index.html";
+	}
 }
